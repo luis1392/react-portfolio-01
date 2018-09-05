@@ -1770,4 +1770,13 @@ section h4 {
   margin-bottom: 3px;
   font-size: 14px; }
 
+.portfolio-content{
+  position: absolute;
+  padding: 0;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: 55%;
+}
+
 /*# sourceMappingURL=styles.css.map */
