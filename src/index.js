@@ -4,5 +4,7 @@ import './css/styles.css';
 import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+import { skills, eduList, jobsList } from './data/datasource'
+
+ReactDOM.render(<App skills = {skills} eduList = {eduList} jobsList = {jobsList} />, document.getElementById('root'));
 registerServiceWorker();

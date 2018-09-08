@@ -1,8 +1,18 @@
 import React, {Component} from 'react'
-// import Job components
+import Job from './Job'
 
 class WorkHistory extends Component {
+  renderJob(jobsList){
+    const list = jobsList.map(element => {
+      return <Job key={element.title} job={element}/>;
+    });
+
+    return list 
+  }
+
+
   render() {
+    const jobsList = this.props.jobsList
     console.log('???');
     /* receive `jobsList` array as props from App compnonent */
 
@@ -16,6 +26,7 @@ class WorkHistory extends Component {
                     to the <Job> component as props...
             */
           }
+          {this.renderJob(jobsList)}
         </div>
       </section>
     )

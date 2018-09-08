@@ -2,13 +2,14 @@ import React, {Component} from 'react'
 
 class EduTitle extends Component {
   render() {
-    this.props.dates
-    this.props.institute
+    const date = this.props.date
+    const institute = this.props.institute
+    const fieldOfStudy = this.props.fieldOfStudy
     return (
       <div className="degree">
-       <h5 className="degree__institute">{/*pass institute as props in EducationHistory component */} </h5>
-       <p className="degree__field">{/*pass field as props in EducationHistory */}</p>
-       <p className="degree__dates">{/*pass dates as props in EducationHistory */}</p>
+       <h5 className="degree__institute">{institute} </h5>
+       <p className="degree__field">{fieldOfStudy}</p>
+       <p className="degree__dates">{date}</p>
      </div>
     );
   }
