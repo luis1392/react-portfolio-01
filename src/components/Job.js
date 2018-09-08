@@ -3,7 +3,7 @@ import React, {Component} from 'react'
 
 class Job extends Component {
   render() {
-    console.log(this.props);
+    //console.log(this.props);
     const title = this.props.job.title
     const company = this.props.job.company
     const description = this.props.job.description

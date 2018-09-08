@@ -13,7 +13,7 @@ class WorkHistory extends Component {
 
   render() {
     const jobsList = this.props.jobsList
-    console.log('???');
+    //console.log('???');
     /* receive `jobsList` array as props from App compnonent */
 
     return (
