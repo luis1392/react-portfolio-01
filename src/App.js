@@ -13,11 +13,9 @@ class App extends Component {
     const jobsList = this.props.jobsList
     return (
       <div className="app-container">
-        {/* <PortfolioFixed title='María Santiago' subtitle='Developer | Mother' image='https://s3.amazonaws.com/uifaces/faces/twitter/jina/128.jpg'/>
-        <PortfolioContent /> */}
-        <SkillsList skills = {skills} />
-        <EducationHistory eduList = {eduList} />
-        <WorkHistory jobsList = {jobsList} />
+        <PortfolioFixed title='María Santiago' subtitle='Developer | Mother' image='https://s3.amazonaws.com/uifaces/faces/twitter/jina/128.jpg'/>
+        <PortfolioContent skills={skills} eduList={eduList} jobsList={jobsList}/>
+
       </div>
     );
   }
