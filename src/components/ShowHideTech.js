@@ -8,17 +8,41 @@ import React, { Component } from 'react';
 
 class ShowHideTech extends Component {
 
+  state = {
+    isVisible: false
+  }
+
+  handleClick = () => {
+    this.setState({
+      isVisible: !this.state.isVisible
+    })
+  }
   render() {
 
     const techlistHiddenClassname = `techlist--hidden`
     const techlistVisibleClassname = `techlist--visible`
 
-    let techlistStatus = techlistHiddenClassname
+    // let techlistStatus 
+    // let textButton
+    // if (this.state.isVisible === true ){
+    //   techlistStatus = techlistVisibleClassname
+    //   textButton = '- Hide Tech'
+    // } else{
+    //   techlistStatus = techlistHiddenClassname
+    //   textButton = '- Show Tech'
+    // }
+
+    const techlistStatus = this.state.isVisible ? techlistVisibleClassname : techlistHiddenClassname;
 
     return (
       <section>
         <h4>Technologies</h4>
-        <button className="toggle-techlist">+ Show Tech</button>
+        <button className="toggle-techlist" onClick={this.handleClick}>
+          {this.state.isVisible
+            ? "- Hide Tech"
+            : "+ Show Tech"
+          }
+        </button>
 
         <div className={`techlist ${techlistStatus}`}>
           <span className="techlist__icon devicons devicons-github_badge"/>
@@ -35,3 +59,4 @@ class ShowHideTech extends Component {
     );
   }
 }
+export default ShowHideTech

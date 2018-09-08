@@ -5,6 +5,7 @@ import ContactInfo from './ContactInfo'
 import SkillsList from './SkillsList'
 import EducationHistory from './EducationHistory'
 import WorkHistory from './WorkHistory'
+import ShowHideTech from './ShowHideTech'
 
 
 class PortfolioContent extends Component {
@@ -27,6 +28,8 @@ class PortfolioContent extends Component {
                 <SkillsList skills = {skills} />
                 <EducationHistory eduList = {eduList} />
                 <WorkHistory jobsList = {jobsList} />
+                <ShowHideTech />
+
             </div>
         )
     }
