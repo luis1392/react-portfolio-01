@@ -6,6 +6,7 @@ import SkillsList from './SkillsList'
 import EducationHistory from './EducationHistory'
 import WorkHistory from './WorkHistory'
 import ShowHideTech from './ShowHideTech'
+import FilterProjects from './FilterProjects'
 
 
 class PortfolioContent extends Component {
@@ -29,6 +30,7 @@ class PortfolioContent extends Component {
                 <EducationHistory eduList = {eduList} />
                 <WorkHistory jobsList = {jobsList} />
                 <ShowHideTech />
+                <FilterProjects />        
 
             </div>
         )
