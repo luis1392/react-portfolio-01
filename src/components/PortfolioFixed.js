@@ -1,16 +1,12 @@
-import React, { Component } from 'react';
-
+import React, { Component } from "react";
 
 class PortfolioFixed extends Component {
   render() {
-    const title = this.props.title
-    const subtitle = this.props.subtitle
-    const image = this.props.image
     return (
       <div className="portfolio-fixed">
-            <img src={image}/>
-            <h1>{title}</h1>
-            <p>{subtitle}</p>
+        <img src={this.props.image} />
+        <h1>{this.props.title}</h1>
+        <p>{this.props.subtitle}</p>
       </div>
     );
   }

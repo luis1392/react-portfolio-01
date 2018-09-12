@@ -1,17 +1,14 @@
-import React, { Component } from 'react'
-
+import React, { Component } from "react";
 
 class Summary extends Component {
-    render () {
-        const summary = this.props.summary
-        const content = this.props.content
-        return (
-            <section>
-                <h4>{summary}</h4>
-                <p>{content}</p>
-            </section>
-        )
-    }
+  render() {
+    return (
+      <section>
+        <h4>{this.props.summary}</h4>
+        <p>{this.props.content}</p>
+      </section>
+    );
+  }
 }
 
-export default Summary
+export default Summary;
