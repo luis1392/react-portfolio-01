@@ -1,23 +1,6 @@
 import React, { Component } from "react";
 import { projectData } from "../data/datasource";
 import Project from "./Project";
-/*  Advice:
-   (1) Create the component's JSX by using .map() on `projectData`
-       you will want to map to an array of <Project/> components
-
-
-   (2) add an onClick event listener to the  <span> elements in .project-types-list
-        that calls a method to change the FilterProjects component state to the selected
-        view,
-
-        Note: you will want to set the component's initial state in the
-              constructor() function
-
-   (3) Use .filter() to render the `projectData` based on FilterProjects
-       component state
-
-       Hint: you may want to use .filter() depending on the  then .map()
- */
 
 class FilterProjects extends Component {
   state = {
@@ -61,15 +44,6 @@ class FilterProjects extends Component {
   };
   render() {
     const projectSelectedClassVal = "project-type--selected";
-
-    let allSelectedRenderedClass = projectSelectedClassVal;
-    let soloSelectedRenderedClass = "";
-    let teamSelectedRenderedClass = "";
-
-    // change value of 'let' variables based on component state for whether
-    //'all', 'team', or 'solo' is selected
-    // --
-
     return (
       <section>
         <h4>Projects</h4>
@@ -77,7 +51,9 @@ class FilterProjects extends Component {
         <div className="project-types-list">
           <span
             data-ptype="all"
-            className={`project-type project-type--all ${allSelectedRenderedClass}`}
+            className={`project-type project-type--all ${
+              this.state.activeFilter === "all" ? projectSelectedClassVal : ""
+            }`}
             onClick={this.handleClickAll}
           >
             All
@@ -85,7 +61,9 @@ class FilterProjects extends Component {
 
           <span
             data-ptype="solo"
-            className={`project-type project-type--solo ${soloSelectedRenderedClass}}`}
+            className={`project-type project-type--solo ${
+              this.state.activeFilter === "solo" ? projectSelectedClassVal : ""
+            }`}
             onClick={this.handleClickSolo}
           >
             <i className="ion-person" />
@@ -94,7 +72,9 @@ class FilterProjects extends Component {
 
           <span
             data-ptype="team"
-            className={`project-type project-type--team ${teamSelectedRenderedClass}`}
+            className={`project-type project-type--team ${
+              this.state.activeFilter === "team" ? projectSelectedClassVal : ""
+            }`}
             onClick={this.handleClickTeam}
           >
             <i className="ion-person-stalker" />
@@ -102,10 +82,7 @@ class FilterProjects extends Component {
           </span>
         </div>
 
-        <div className="projects-list">
-          {/* Step (1) --- .map() the projectData to JSX  */}
-          {this.renderProjects(projectData)}
-        </div>
+        <div className="projects-list">{this.renderProjects(projectData)}</div>
       </section>
     );
   }
